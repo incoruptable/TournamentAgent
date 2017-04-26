@@ -50,7 +50,7 @@ public class BrandtZach implements IAgent {
 
         if (!anyEnemiesAlive(m) || goBerzerkMode) {
             goBerzerkMode = true;
-            beFlagAttacker(m, indexOfSprite);
+            beAttacker(m, indexOfSprite);
         } else {
             if (indexOfSprite == 1) {
                 beDefender(m, indexOfSprite);
