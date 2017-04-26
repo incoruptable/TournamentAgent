@@ -18,7 +18,7 @@ class Game {
     }
 
     public static void main(String[] args) throws Exception {
-        Controller.doBattle(new Winner2016a(), new PrescientMoron());
+        Controller.doBattle(new BrandtZach(), new Blitz());
         //Controller.doBattle(new Mixed(), new Blitz());
         //Controller.doBattle(new Mixed(), new AggressivePack());
         //Controller.doBattle(new Blitz(), new Mixed());
