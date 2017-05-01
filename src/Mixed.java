@@ -82,7 +82,27 @@ class Mixed implements IAgent {
     }
 
     void beFlagAttacker(Model m, int i) {
+        // Head for the opponent's flag
+        m.setDestination(i, Model.XFLAG_OPPONENT - Model.MAX_THROW_RADIUS + 1, Model.YFLAG_OPPONENT);
 
+        // Avoid opponents
+        float myX = m.getX(i);
+        float myY = m.getY(i);
+        nearestOpponent(m, myX, myY);
+        if (index >= 0) {
+            float enemyX = m.getXOpponent(index);
+            float enemyY = m.getYOpponent(index);
+            if (sq_dist(enemyX, enemyY, myX, myY) <= (Model.MAX_THROW_RADIUS + Model.BLAST_RADIUS) * (Model.MAX_THROW_RADIUS + Model.BLAST_RADIUS))
+                m.setDestination(i, myX + 10.0f * (myX - enemyX), myY + 10.0f * (myY - enemyY));
+        }
+
+        // Shoot at the flag if I can hit it
+        if (sq_dist(m.getX(i), m.getY(i), Model.XFLAG_OPPONENT, Model.YFLAG_OPPONENT) <= Model.MAX_THROW_RADIUS * Model.MAX_THROW_RADIUS) {
+            m.throwBomb(i, Model.XFLAG_OPPONENT, Model.YFLAG_OPPONENT);
+        }
+
+        // Try not to die
+        avoidBombs(m, i);
     }
 
     void beAggressor(Model m, int i) {
