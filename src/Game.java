@@ -13,12 +13,13 @@ class Game {
         al.add(new Winner2015a());
         al.add(new Winner2015b());
         al.add(new Winner2016a());
+        al.add(new BrandtZach());
 
         Controller.doTournament(al);
     }
 
     public static void main(String[] args) throws Exception {
-        Controller.doBattle(new BrandtZach(), new Blitz());
+        //Controller.doBattle(new Winner2015a(), new BrandtZach());
         //Controller.doBattle(new Mixed(), new Blitz());
         //Controller.doBattle(new Mixed(), new AggressivePack());
         //Controller.doBattle(new Blitz(), new Mixed());
@@ -28,6 +29,7 @@ class Game {
         //Controller.doBattle(new PrescientMoron(), new SittingDuck());
         //Controller.doBattle(new PrescientMoron(), new Human());
         //Controller.doBattle(new Human(), new PrescientMoron());
-        //fullTournament();
+        //Controller.doBattle(new BrandtZach(), new Mixed());
+        Controller.doBattle(new BrandtZach(), new WebbNathaniel());
     }
 }
