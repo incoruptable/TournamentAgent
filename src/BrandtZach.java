@@ -4,8 +4,20 @@ import java.util.TreeSet;
 
 import static java.lang.Math.*;
 
+
 /**
  * Created by zach on 4/24/2017.
+ *
+ * AI Assignment 8 For Zach Brandt
+ *
+ * In my code I decided to implement A* Search as well as use forking for my two AI techniques I learned this semester. I used A* Search
+ * to find the best path to any destination that my agent wishes to go to. This includes any dodging destinations or on the way to it's
+ * opponent. The forking technique I implemented helped me find the best direction to dodge in. It figures out which of the eight directions
+ * is the best way to travel in order to maximize distance from the blast zone.
+ *
+ * I also wouldn't have been able to get this working nearly as well as it does now without some inspiration from Michael Gashler's Mixed agent.
+ * I referenced previous year's winners like 2015b's bomb throwing technique in my code. I kept on running into issues where I would never
+ * throw a bomb at his agents, but I would just keep dodging. So I played around with his technique and made it work for me. 
  */
 public class BrandtZach implements IAgent {
 
